@@ -1,3 +1,10 @@
+/*
+Nama Program  : nbulan
+Deskripsi     : menuliskan ke layar nama-nama bulan dari nomor bulan, yaitu 1 s.d. 12 yang dibaca dari masukan keyboard
+Nama Pembuat  : Aniqah Nursabrina
+NIM           : 24060122120036
+Tanggal       : 06/03/2023
+*/
 #include <stdio.h>
 int  main(void){
     // Kamus Lokal
