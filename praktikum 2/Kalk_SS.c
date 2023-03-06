@@ -1,9 +1,9 @@
 /*
-Nama Program  :
-Deskripsi     :
-Nama Pembuat  :
-NIM           :
-Tanggal       :
+Nama Program  : Kalk_SS
+Deskripsi     : menampilkan penjumlahan a dan b berdasarkan pilihan operator
+Nama Pembuat  : Aniqah Nursabrina
+NIM           : 24060122120036
+Tanggal       : 05/03/2023
 */
 #include <stdio.h>
 int  main(void){
