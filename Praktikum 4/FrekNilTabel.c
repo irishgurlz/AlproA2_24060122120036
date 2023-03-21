@@ -12,16 +12,20 @@ int main(){
     int i;
     int j;
     
-    for (i=0;i<10;i++){
+    for (i=0;i<10;i++)
+    {
         count = 1;
+        if(T[i]!=0)
+        {
         for (j=1;j<10;j++){
             if ((T[i] == T[j]) && (i != j)){
-                T[j] = 0;
                 count = count + 1;
+                T[j] = 0;
             }
         } 
-        if (count == 2){
+        if (count >=2){
             printf ("%d", T[i]);
+        }
         }
     } 
     return 0;
