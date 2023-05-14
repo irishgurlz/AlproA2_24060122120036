@@ -6,55 +6,27 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-/*Program Utama*/
 int main(void){
-    /* Kamus */
-    int A[15],B[15],C[100],i,j,n,k;
-    k=0; // nilai maksimum tabel A
+    int T[6]={10,12,99,57,35,26};
+    int SimpanSementara;
+    int N = 6;
 
-    /* Algoritma */
-    printf("=======COUNTING SORT DESCENDING=======\n");
-    printf("Masukan size array : ");
-    scanf("%d",&n);
-    for(i=1;i<=n;i++){
-        printf("Masukan data ke-%d : ",i);
-        scanf("%d",&A[i]);
-        if(A[i]>k){
-            k=A[i]; // mencari nilai maksimum
-        }
+    printf("Sebelum");
+    for(int i = 0;i<N;i++){
+        printf("\n%d",T[i]);
     }
-    printf("Nilai maksimum array = %d\n",k);
-    printf("---------Sebelum---------\n");
-    for(i=1;i<=n;i++){ // print nilai array sebelum diurutkan
-        printf("%d ",A[i]);
+    for(int i = 0;i<N;i++){
+         for(int j = 0;j<N;j++){
+            if(T[j]<T[j+1]){ /*perbedaan ascending dan descending hanya pada tanda < dan >*/
+                SimpanSementara = T[j];
+                T[j] = T[j+1];
+                T[j+1]=SimpanSementara;
+            }
     }
-    // membuat array C dengan panjang k kemudian diinisialisasikan 0
-    for(i=0;i<=k;i++){
-        C[i] = 0;
     }
-
-    // step 1 melakukan increment pada array C
-    for(j=1;j<=n;j++){
-        C[A[j]]++;
+    printf("\nSesudah\n");
+    for(int i = 0;i<N;i++){
+        printf("\n%d",T[i]);
     }
-
-    // step 2 menambahkan elemen berdasarkan elemen sebelumnya
-    for(i=k;i>=1;i--){
-        C[i-1] = C[i] + C[i-1];
-    }
-
-    // step 3 memasukan data ke array B dengan beberapa
-    for(j=1;j<=n;j++){
-        B[C[A[j]]] = A[j];
-        C[A[j]]--;
-    }
-
-    /* Output */
-    printf("\n---------Sesudah---------\n");
-    for(i=1;i<=n;i++){ // print nilai array setelah diurutkan
-        printf("%d ",B[i]);
-    }
-    printf("\n======================================\n");
     return 0;
 }
-
