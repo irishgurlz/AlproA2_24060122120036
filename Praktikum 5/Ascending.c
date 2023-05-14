@@ -2,36 +2,32 @@
 /*Nama Pembuat : Aniqah Nursabrina */
 /*Tanggal : 11 Mei 2023 */
 /*Deskripsi : Mengurutkan secara ascending atau dari yang paling kecil ke paling besar*/
-#include <stdio.h>
 
-void swap(int *a, int *b) {
-  int temp = *a;
-  *a = *b;
-  *b = temp;
-}
+#include<stdio.h>
+#include<stdlib.h>
 
-void selectionSort(int array[], int size) {
-  for (int step = 0; step < size - 1; step++) {
-    int IMin = step;
-    for (int i = step + 1; i < size; i++) {
-      if (array[i] < array[IMin])
-        IMin = i;
+int main(void){
+    int T[6]={10,12,99,57,35,26};
+    int SimpanSementara;
+    int N = 6;
+
+    printf("Sebelum");
+    for(int i = 0;i<N;i++){
+        printf("\n%d",T[i]);
     }
-    swap(&array[IMin], &array[step]);
-  }
-}
+    for(int i = 0;i<N;i++){
+         for(int j = 0;j<N;j++){
+            if(T[j]>T[j+1]){
+                SimpanSementara = T[j];
+                T[j] = T[j+1];
+                T[j+1]=SimpanSementara;
 
-void printArray(int array[], int size) {
-  for (int i = 0; i < size; ++i) {
-    printf("%d  ", array[i]);
-  }
-  printf("\n");
-}
-
-int main() {
-  int data[] = {20, 12, 10, 15, 2};
-  int size = sizeof(data) / sizeof(data[0]);
-  selectionSort(data, size);
-  printf("Sorted array in Acsending Order:\n");
-  printArray(data, size);
+            }
+    }
+    }
+    printf("\nSesudah\n");
+    for(int i = 0;i<N;i++){
+        printf("\n%d",T[i]);
+    }
+    return 0;
 }
