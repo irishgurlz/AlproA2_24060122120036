@@ -1,6 +1,0 @@
-# depslib dependency file v1.0
-1686106396 source:c:\users\asusc\onedrive\documents\c\pokemon\main.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-
